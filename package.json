@@ -1,0 +1,26 @@
+{
+  "name": "ng-hipstack",
+  "version": "0.1.0",
+  "description": "angular 2 hip stack",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasperstorgaard/ng-hipstack.git"
+  },
+  "keywords": [
+    "angular2",
+    "hip",
+    "stack",
+    "tape",
+    "testdouble.js"
+  ],
+  "author": "kasperstorgaard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kasperstorgaard/ng-hipstack/issues"
+  },
+  "homepage": "https://github.com/kasperstorgaard/ng-hipstack#readme"
+}
