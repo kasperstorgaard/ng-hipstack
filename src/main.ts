@@ -1,4 +1,5 @@
-const text = document.createTextNode('hello world!');
-const tag = document.createElement('h1');
-tag.appendChild(text);
-document.body.appendChild(tag);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
