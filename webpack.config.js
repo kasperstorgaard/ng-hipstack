@@ -1,25 +1,20 @@
 module.exports = {
-    entry: './src/main.ts',
-    output: {
-        filename: './dist/bundle.js'
-    },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'angular2']
+        }
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw'
+      }
+    ]
+  },
 
-    devtool: 'source-map',
-
-    resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
-    },
-
-    module: {
-        loaders: [
-            { test: /\.ts$/, loader: 'ts' }
-        ],
-
-        preLoaders: [
-            { test: /\.js$/, loader: 'source-map-loader' }
-        ]
-    },
-
-    externals: {
-    }
+  devtool: 'source-map'
 };

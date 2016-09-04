@@ -7,7 +7,7 @@ module.exports = function(config) {
         files: ['src/**/*.spec.ts'],
         exclude: ['node_modules'],
         preprocessors: {
-            'src/**/*.spec.ts': ['webpack']
+            'src/**/*.spec.js': ['webpack']
         },
         webpack: {
             module: webpackConfig.module,
