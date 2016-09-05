@@ -1,31 +1,34 @@
+var webpack = require('karma-webpack');
 var webpackConfig = require('./webpack.config');
 
 module.exports = function(config) {
     config.set({
+        plugins: [
+            webpack,
+            require('karma-webpack'),
+            require('karma-tap'),
+            require('karma-chrome-launcher'),
+            require('karma-phantomjs-launcher')
+        ],
         basePath: '',
-        frameworks: ['tap', 'testdouble'],
-        files: ['src/**/*.spec.ts'],
-        exclude: ['node_modules'],
+        frameworks: ['tap'],
+        files: ['src/**/*.spec.js'],
+        // exclude: ['node_modules'],
         preprocessors: {
-            'src/**/*.spec.js': ['webpack']
+            'src/**/*.spec.js': ['webpack'],
+            'src/**/*.js': ['webpack']
         },
-        webpack: {
-            module: webpackConfig.module,
-            resolve: webpackConfig.resolve,
-            node: {
-                  fs: "empty"
-            }
-        },
+        webpack: webpackConfig,
         webpackMiddleware: {
             noInfo: true
         },
-        reporters: ['progress'],
+        reporters: ['dots'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['PhantomJS'],
-        singleRun: false,
-        concurrency: Infinity
+        browsers: ['Chrome'],
+        singleRun: false
+        // falsepacconcurrency: Infinity
     });
 };

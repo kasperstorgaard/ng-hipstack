@@ -1,9 +1,11 @@
-const td = require('testdouble');
-const test = require('tape');
-const TestComponent = require('./app.component');
+import * as td from 'testdouble';
+import * as rm from 'reflect-metadata';
+import { test } from 'tape';
+import { AppComponent } from './app.component';
 
-test('some stuff', t => {
-    const component = new TestComponent();
-    t.equal(component.title, 'Angular 2 QuickStart');
+test('AppComponent instance', t => {
+    const component = new AppComponent();
+    t.equal(component.title, 'Angular 2 QuickStart',
+        'Given a component instance, the title should match the hardcoded string');
     t.end();
 });
